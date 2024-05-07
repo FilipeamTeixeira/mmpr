@@ -1,0 +1,37 @@
+Package: mmpr
+Type: Package
+Title: Molecular Microbial Physiology R Package
+Version: 0.9.1.1
+Authors@R: c(
+  person("Joeri", "Jongbloets", email="j.a.jongbloets@uva.nl", role=c("aut", "cre")),
+  person("Hugo", "Pineda Hernandez", role = c("aut"))
+  )
+Description: Package with some core functions used in the MMP group.
+Encoding: UTF-8
+Depends:
+    R (>= 3.1.3)
+Imports:
+    rlang,
+    lazyeval,
+    magrittr,
+    readr,
+    tidyr (>= 1.0.0),
+    dplyr,
+    tibble,
+    purrr,
+    slider (>= 0.1.4),
+    broom,
+    usethis (>= 1.4.0.9000)
+License: file LICENSE
+LazyData: TRUE
+RoxygenNote: 6.1.1
+Suggests:
+    testthat,
+    RSQLite,
+    zyp,
+    git2r,
+    packrat,
+    here,
+Remotes: 
+  gitlab::mmp-uva/slider,
+  github::r-lib/usethis

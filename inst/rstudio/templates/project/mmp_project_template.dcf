@@ -1,0 +1,22 @@
+Binding: mmp_project_template
+Title: MMP Analysis Project
+Subtitle: Create a project laid out for an analysis project
+OpenFiles: README.md
+
+Parameter: readme
+Widget: CheckboxInput
+Label: Create README
+Default: On
+Position: left
+
+Parameter: git
+Widget: CheckboxInput
+Label: Create a git repository
+Default: On
+Position: left
+
+Parameter: packrat
+Widget: CheckboxInput
+Label: Use packrat with this project
+Default: Off
+Position: right
