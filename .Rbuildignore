@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+
+CHANGELOG.md
+_README.Rmd
+
+performance

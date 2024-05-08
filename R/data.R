@@ -221,10 +221,10 @@ load_pycultivator_sqlite <- function(
     # Replace src_sqlite() with tbl() and pass the database connection
     data_db <- tbl(con, "measurement")
 
-    #stopifnot("measurement" %in% src_tbls(data_db)) old
-    stopifnot("measurement" %in% tbls(con)) old #new
+    #stopifnot("measurement" %in% src_tbls(data_db))
+    stopifnot("measurement" %in% DBI::dbListTables(con)) #new
 
-    #data <- collect(tbl(data_db, "measurement"), n = Inf) %>%
+    #data <- collect(tbl(data_db, "measurement"), n = Inf) %>% old
     data <- collect(data_db, n = Inf) %>% #new
       parse_pycultivator_sqlite(t_zero, time_fmt)
   }

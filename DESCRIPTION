@@ -1,10 +1,11 @@
 Package: mmpr
 Type: Package
 Title: Molecular Microbial Physiology R Package
-Version: 0.9.1.1
+Version: 0.9.2
 Authors@R: c(
   person("Joeri", "Jongbloets", email="j.a.jongbloets@uva.nl", role=c("aut", "cre")),
-  person("Hugo", "Pineda Hernandez", role = c("aut"))
+  person("Hugo", "Pineda Hernandez", role = c("aut"),
+  person("Filipe", "Teixeira", email="f.a.marquesteixeira@uva.nl", role = c("aut"))
   )
 Description: Package with some core functions used in the MMP group.
 Encoding: UTF-8
@@ -32,6 +33,7 @@ Suggests:
     git2r,
     packrat,
     here,
+    DBI,
 Remotes: 
   gitlab::mmp-uva/slider,
   github::r-lib/usethis
