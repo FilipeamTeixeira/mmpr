@@ -18,9 +18,14 @@ load_turbidostat_sqlite <- function(
     # Replace src_sqlite() with tbl() and pass the database connection
     data_db <- tbl(con, "turbidostat")
 
-    if ("turbidostat" %in% src_tbls(data_db)) {
+    #if ("turbidostat" %in% src_tbls(data_db)) { old
+    if ("turbidostat" %in% DBI::dbListTables(con)) {
       #data <- collect(tbl(data_db, "turbidostat"), n = Inf) old
       data <- parse_turbidostat(data, t_zero, time_fmt)
+
+      # Close the database connection
+      DBI::dbDisconnect(con)
+
     } else {
       warning("No turbidostat table in data")
     }
@@ -124,7 +129,7 @@ parse_turbidostat <- function(
   data, t_zero=NA, time_fmt="%Y-%m-%d %H:%M:%S"
 ) {
   if (is.na(t_zero)) {
-    t_zero <- as.character( (data %>% arrange(time))$time[[1]])
+    t_zero <- as.character((data %>% arrange(time))$time[[1]])
   }
 
   data$experiment_id <- as.numeric(data$experiment_id)

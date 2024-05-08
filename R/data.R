@@ -227,6 +227,10 @@ load_pycultivator_sqlite <- function(
     #data <- collect(tbl(data_db, "measurement"), n = Inf) %>% old
     data <- collect(data_db, n = Inf) %>% #new
       parse_pycultivator_sqlite(t_zero, time_fmt)
+
+    # Close the database connection
+    DBI::dbDisconnect(con)
+
   }
   return(data)
 }
